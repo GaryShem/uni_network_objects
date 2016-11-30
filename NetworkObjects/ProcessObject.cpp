@@ -43,6 +43,7 @@ void ProcessObject::call(std::string str)
 	{
 		_tprintf(TEXT("\nPROCESS NAME:  %s"), pe32.szExeFile);
 	} while (Process32Next(hProcessSnap, &pe32));
+	std::cout << std::endl;
 
 	CloseHandle(hProcessSnap);
 }

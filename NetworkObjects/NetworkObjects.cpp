@@ -173,26 +173,22 @@ void choose_object()
 	{
 		correct_choice = true;
 		std::cout << "Choose object type for this machine" << std::endl;
-		std::cout << "0. None\n" << "1. Print\n" << "2. Process\n" << "3.Beep\n" << "-> ";
+		std::cout << "0. None\n" << "1. Print\n" << "2. Process\n" << "3. Beep\n" << "-> ";
 		std::cin >> choice;
 		std::cin.ignore();
-		std::cout << "Your choice is " << choice << ": ";
+		std::cout << "Your choice is " << choice << std::endl;
 		switch (choice)
 		{
 		case 0:
-			std::cout << "no object" << std::endl;
 			current_object_type = NO_OBJECT;
 			break;
 		case 1:
-			std::cout << "print object" << std::endl;
 			current_object_type = PRINT;
 			break;
 		case 2:
-			std::cout << "process object" << std::endl;
 			current_object_type = PROCESSES;
 			break;
 		case 3:
-			std::cout << "beep object" << std::endl;
 			current_object_type = BEEP;
 			break;
 		default:
@@ -201,7 +197,7 @@ void choose_object()
 			break;
 		}
 	}
-	std::cout << "object chosen" << std::endl;
+	std::cout << "object chosen: " << obj_type_to_string(current_object_type) << std::endl;
 }
 
 int send_command()
