@@ -145,6 +145,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BeepObject.h" />
     <ClInclude Include="CommandType.h" />
     <ClInclude Include="NetObject.h" />
     <ClInclude Include="NetObjectType.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="WSAObject.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BeepObject.cpp" />
     <ClCompile Include="NetObject.cpp" />
     <ClCompile Include="NetworkObjects.cpp" />
     <ClCompile Include="NoneObject.cpp" />

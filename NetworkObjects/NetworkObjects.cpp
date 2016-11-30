@@ -14,6 +14,7 @@
 #include "CommandType.h"
 #include "NetObjectType.h"
 #include "ProcessObject.h"
+#include "BeepObject.h"
 
 #pragma comment(lib, "Ws2_32.lib")
 
@@ -145,6 +146,7 @@ void init_network_objects()
 	net_objects.push_back(new NoneObject());
 	net_objects.push_back(new PrintObject());
 	net_objects.push_back(new ProcessObject());
+	net_objects.push_back(new BeepObject());
 }
 
 CommandType compare_command(char* buf)
@@ -171,10 +173,10 @@ void choose_object()
 	{
 		correct_choice = true;
 		std::cout << "Choose object type for this machine" << std::endl;
-		std::cout << "0. None\n" << "1. Print\n" << "2. Process\n" << "-> ";
+		std::cout << "0. None\n" << "1. Print\n" << "2. Process\n" << "3.Beep\n" << "-> ";
 		std::cin >> choice;
 		std::cin.ignore();
-		std::cout << "Your choice is" << choice << ": ";
+		std::cout << "Your choice is " << choice << ": ";
 		switch (choice)
 		{
 		case 0:
@@ -188,6 +190,10 @@ void choose_object()
 		case 2:
 			std::cout << "process object" << std::endl;
 			current_object_type = PROCESSES;
+			break;
+		case 3:
+			std::cout << "beep object" << std::endl;
+			current_object_type = BEEP;
 			break;
 		default:
 			std::cout << "incorrect choice, try again" << std::endl;
@@ -317,7 +323,7 @@ std::string obj_type_to_string(NetObjectType net_obj_type)
 	case NO_OBJECT: return "no object";
 	case PRINT: return "print object";
 	case PROCESSES: return "process object";
-	case FOLDER: return "folder object";
+	case BEEP: return "beep object";
 	default: return "error; check object types";
 	}
 }
